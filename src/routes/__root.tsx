@@ -17,8 +17,18 @@ export const Route = createRootRoute({
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
       { title: pageTitle },
       { name: 'description', content: site.business.tagline },
+      { property: 'og:type', content: 'website' },
+      { property: 'og:site_name', content: site.business.name },
+      { property: 'og:title', content: pageTitle },
+      { property: 'og:description', content: site.business.tagline },
+      { property: 'og:url', content: site.business.siteUrl },
+      { name: 'twitter:card', content: 'summary' },
+      { name: 'twitter:title', content: pageTitle },
+      { name: 'twitter:description', content: site.business.tagline },
     ],
     links: [
+      { rel: 'canonical', href: site.business.siteUrl },
+      { rel: 'icon', type: 'image/svg+xml', href: '/favicon.svg' },
       { rel: 'preconnect', href: 'https://fonts.googleapis.com' },
       { rel: 'preconnect', href: 'https://fonts.gstatic.com', crossOrigin: 'anonymous' },
       {

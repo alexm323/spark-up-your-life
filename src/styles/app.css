@@ -1,0 +1,144 @@
+:root {
+  --twilight: #211539; /* page background — deep twilight violet */
+  --velvet: #2b1d4a; /* raised surfaces */
+  --cream: #f4ecde; /* primary text */
+  --faded: #bbaecf; /* secondary text */
+  --spark: #e9ba4f; /* gold sparkle accent */
+  --rose: #e484a9; /* playful rose secondary */
+  --hairline: rgba(233, 186, 79, 0.3);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{
+  background:var(--twilight);
+  color:var(--cream);
+  font-family:'Karla',sans-serif;
+  font-size:17px;
+  line-height:1.65;
+  -webkit-font-smoothing:antialiased;
+}
+h1,h2,h3{font-family:'Cormorant Garamond',serif;font-weight:500;line-height:1.12}
+a{color:var(--spark)}
+a:focus-visible,button:focus-visible{outline:2px solid var(--spark);outline-offset:3px;border-radius:2px}
+.wrap{max-width:1060px;margin:0 auto;padding:0 24px}
+.eyebrow{
+  font-size:12px;letter-spacing:.26em;text-transform:uppercase;
+  color:var(--spark);font-weight:700;
+}
+.glint{color:var(--spark)}
+
+/* ── Header ─────────────────────────────── */
+header{padding:26px 0;border-bottom:1px solid var(--hairline)}
+header .wrap{display:flex;align-items:baseline;justify-content:space-between;gap:16px;flex-wrap:wrap}
+.wordmark{
+  font-family:'Cormorant Garamond',serif;font-size:26px;letter-spacing:.04em;
+  color:var(--cream);text-decoration:none;
+}
+.wordmark .glint{font-size:18px;vertical-align:2px}
+nav{display:flex;gap:26px;flex-wrap:wrap}
+nav a{color:var(--faded);text-decoration:none;font-size:14px;letter-spacing:.06em}
+nav a:hover{color:var(--spark)}
+
+/* ── Hero with star field ───────────────── */
+.hero{position:relative;padding:118px 0 100px;text-align:center;overflow:hidden}
+.hero::before{
+  content:"";position:absolute;inset:0;pointer-events:none;
+  background:radial-gradient(ellipse 62% 55% at 50% 32%, rgba(233,186,79,.14), transparent 70%);
+}
+.stars{position:absolute;inset:0;pointer-events:none}
+.stars i{
+  position:absolute;font-style:normal;color:var(--spark);
+  animation:twinkle 3.4s ease-in-out infinite;
+}
+.stars i:nth-child(2){animation-delay:.7s;color:var(--rose)}
+.stars i:nth-child(3){animation-delay:1.3s}
+.stars i:nth-child(4){animation-delay:2s;color:var(--rose)}
+.stars i:nth-child(5){animation-delay:2.6s}
+.stars i:nth-child(6){animation-delay:1.7s}
+@keyframes twinkle{0%,100%{opacity:.25;transform:scale(.85)}50%{opacity:1;transform:scale(1.1)}}
+@media (prefers-reduced-motion: reduce){
+  .stars i{animation:none;opacity:.6}
+  html{scroll-behavior:auto}
+}
+.hero h1{font-size:clamp(46px,7.5vw,84px);margin:18px 0 22px}
+.hero h1 em{color:var(--spark);font-style:italic}
+.hero p{max-width:540px;margin:0 auto 38px;color:var(--faded);font-size:18px}
+.btn{
+  display:inline-block;padding:14px 34px;
+  border:1px solid var(--spark);color:var(--spark);
+  text-decoration:none;font-size:14px;letter-spacing:.14em;text-transform:uppercase;font-weight:700;
+  background:transparent;transition:background .25s,color .25s;
+  cursor:pointer;
+}
+.btn:hover{background:var(--spark);color:var(--twilight)}
+.btn.solid{background:var(--spark);color:var(--twilight)}
+.btn.solid:hover{background:transparent;color:var(--spark)}
+
+.spark-divider{
+  display:flex;justify-content:center;gap:22px;margin-top:64px;
+  color:var(--spark);font-size:14px;letter-spacing:.4em;
+}
+.spark-divider span:nth-child(2){color:var(--rose)}
+
+section{padding:88px 0}
+.section-head{text-align:center;margin-bottom:56px}
+.section-head h2{font-size:clamp(32px,4.5vw,46px);margin-top:14px}
+
+/* ── Services as tarot cards ────────────── */
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:28px}
+.card{
+  background:var(--velvet);border:1px solid var(--hairline);padding:10px;
+  transition:transform .3s ease, box-shadow .3s ease;position:relative;
+}
+.card:hover{transform:translateY(-6px) rotate(-.5deg);box-shadow:0 18px 44px rgba(0,0,0,.5)}
+.card:hover .corner{opacity:1}
+.corner{
+  position:absolute;top:14px;right:16px;color:var(--rose);
+  opacity:.45;transition:opacity .3s;font-size:15px;
+}
+.card-inner{
+  border:1px solid var(--hairline);padding:36px 26px 30px;height:100%;
+  display:flex;flex-direction:column;text-align:center;
+}
+.card .numeral{font-family:'Cormorant Garamond',serif;color:var(--spark);font-size:20px;letter-spacing:.3em}
+.card h3{font-size:30px;margin:14px 0 4px}
+.card .sub{font-size:13px;color:var(--rose);letter-spacing:.18em;text-transform:uppercase;margin-bottom:18px}
+.card p{color:var(--faded);font-size:15.5px;flex:1}
+.card .price{font-family:'Cormorant Garamond',serif;font-size:34px;color:var(--cream);margin:22px 0 6px}
+.card .price small{font-size:15px;color:var(--faded);font-family:'Karla',sans-serif}
+.card .btn{margin-top:14px}
+
+/* ── About ──────────────────────────────── */
+.about{border-top:1px solid var(--hairline);border-bottom:1px solid var(--hairline);background:var(--velvet)}
+.about .wrap{display:grid;grid-template-columns:1fr 1.4fr;gap:56px;align-items:center}
+@media(max-width:760px){.about .wrap{grid-template-columns:1fr}}
+.portrait{aspect-ratio:3/4;border:1px solid var(--hairline);padding:10px}
+.portrait-inner{
+  height:100%;border:1px solid var(--hairline);
+  display:flex;align-items:center;justify-content:center;
+  color:var(--faded);font-size:14px;letter-spacing:.1em;
+  background:radial-gradient(circle at 50% 35%, rgba(233,186,79,.14), transparent 60%),var(--twilight);
+}
+.about h2{font-size:clamp(30px,4vw,42px);margin:12px 0 20px}
+.about p{color:var(--faded);margin-bottom:16px}
+
+/* ── Process ────────────────────────────── */
+.steps{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:40px;counter-reset:step}
+.step h3{font-size:24px;margin:10px 0 8px}
+.step p{color:var(--faded);font-size:15.5px}
+.step::before{
+  counter-increment:step;
+  content:counter(step,upper-roman);
+  font-family:'Cormorant Garamond',serif;
+  color:var(--spark);font-size:22px;letter-spacing:.2em;
+}
+
+/* ── Contact / payment ──────────────────── */
+.contact{background:var(--velvet);border-top:1px solid var(--hairline)}
+.contact .wrap{text-align:center;max-width:640px}
+.contact h2{font-size:clamp(30px,4vw,42px);margin:12px 0 18px}
+.contact p{color:var(--faded);margin-bottom:26px}
+.paylinks{display:flex;gap:16px;justify-content:center;flex-wrap:wrap;margin-top:8px}
+
+footer{padding:40px 0;text-align:center;color:var(--faded);font-size:13px}
+footer .spark-divider{margin:0 0 18px}

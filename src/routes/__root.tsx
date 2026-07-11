@@ -5,13 +5,27 @@ import {
   HeadContent,
   Scripts,
 } from '@tanstack/react-router'
+import appCss from '../styles/app.css?url'
+import { site } from '../content/site'
+
+const pageTitle = `${site.business.practitioner} · ${site.business.name} — Tarot, Reiki & Spellwork`
 
 export const Route = createRootRoute({
   head: () => ({
     meta: [
       { charSet: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      { title: 'Spark Up Your Life' },
+      { title: pageTitle },
+      { name: 'description', content: site.business.tagline },
+    ],
+    links: [
+      { rel: 'preconnect', href: 'https://fonts.googleapis.com' },
+      { rel: 'preconnect', href: 'https://fonts.gstatic.com', crossOrigin: 'anonymous' },
+      {
+        rel: 'stylesheet',
+        href: 'https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500;1,600&family=Karla:wght@400;500;700&display=swap',
+      },
+      { rel: 'stylesheet', href: appCss },
     ],
   }),
   component: RootComponent,

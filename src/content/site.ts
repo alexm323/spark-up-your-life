@@ -8,6 +8,7 @@ export interface Business {
     url: string
   }
   venmoUrl: string
+  bookingUrl: string
 }
 
 export interface Service {
@@ -56,6 +57,7 @@ export const site: SiteContent = {
       url: 'https://instagram.com/yourhandle',
     },
     venmoUrl: 'https://venmo.com/u/her-username',
+    bookingUrl: 'https://cal.com/stina-sparkles',
   },
   services: [
     {

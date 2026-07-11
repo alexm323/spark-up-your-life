@@ -101,8 +101,8 @@ export const site: SiteContent = {
   about: {
     heading: "Hi, I'm Stina",
     paragraphs: [
-      "I picked up my first tarot deck in my early twenties, during a stretch where not much about my life made sense on paper. It started as something just for me. These days it's most of what I do.",
-      "I trained in traditional tarot and Usui reiki, and picked up folk magic from books, teachers, and a lot of trial and error. I won't tell you that you're cursed to get you to book another session. If something's outside what I do, I'll say so.",
+      "I was born sensitive — I picked up on things long before I had words for them. Tarot gave me a way to work with that instead of just carrying it around.",
+      "I trained in traditional tarot and Usui reiki, and I still learn something new with almost every reading.",
     ],
   },
   process: {

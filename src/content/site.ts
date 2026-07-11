@@ -68,7 +68,7 @@ export const site: SiteContent = {
       name: 'Tarot Reading',
       cardTitle: 'The Cards',
       description:
-        "A full spread built around whatever you're actually dealing with right now — a relationship, a job, a decision you can't make up your mind about. We can do it over video, or I'll write it up for you to read on your own time.",
+        "A full spread built around whatever you're actually dealing with right now. Could be a relationship, a job, a decision you can't make up your mind about. We can do it over video, or I'll write it up for you to read on your own time.",
       price: '$65',
       priceNote: '/ 45 min',
       bookingUrl: 'https://cal.com/stina-sparkles/tarot-reading',
@@ -101,7 +101,7 @@ export const site: SiteContent = {
   about: {
     heading: "Hi, I'm Stina",
     paragraphs: [
-      "I was born sensitive — I picked up on things long before I had words for them. Tarot gave me a way to work with that instead of just carrying it around.",
+      "I was born sensitive. I picked up on things long before I had words for them, and tarot gave me a way to work with that instead of just carrying it around.",
       "I trained in traditional tarot and Usui reiki, and I still learn something new with almost every reading.",
     ],
   },
@@ -116,7 +116,7 @@ export const site: SiteContent = {
       {
         title: 'Set your intention',
         description:
-          "Before we meet, think about what you actually want to ask. It doesn't need to be polished — just show up curious.",
+          "Before we meet, think about what you actually want to ask. It doesn't need to be polished, just show up curious.",
       },
       {
         title: 'The session',

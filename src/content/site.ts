@@ -80,7 +80,7 @@ export const site: SiteContent = {
       name: 'Reiki Session',
       cardTitle: 'The Hands',
       description:
-        "Energy work to help you feel less drained and more like yourself. I offer distance sessions too, and most clients say they feel just as strong as the in-person ones.",
+        "Energy work to help you feel less drained and more like yourself.",
       price: '$80',
       priceNote: '/ 60 min',
       bookingUrl: 'https://cal.com/stina-sparkles/reiki-session',
@@ -92,7 +92,7 @@ export const site: SiteContent = {
       name: 'Custom Spellwork',
       cardTitle: 'The Craft',
       description:
-        "A spell built around what you actually need, whether that's protection, letting something go, or drawing something in. We talk through the details first, and you get a full write-up of the working afterward.",
+        "A spell built around what you actually need, whether that's protection, letting something go, or drawing something in. We talk through the details first, and you get a full video of the spell afterward.",
       price: 'from $95',
       bookingUrl: 'https://cal.com/stina-sparkles/spellwork-consult',
       ctaLabel: 'Inquire',

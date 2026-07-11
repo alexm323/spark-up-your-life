@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!-- Search this file for "EDIT:" to find every spot to personalize. -->
+<title>Stina Sparkles · Spark Up Your Life — Tarot, Reiki &amp; Spellwork</title>
+<meta name="description" content="Spark up your life with Stina Sparkles — intuitive tarot readings, reiki energy work, and custom spellwork.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500;1,600&family=Karla:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --twilight:   #211539;   /* page background — deep twilight violet */
+    --velvet:     #2B1D4A;   /* raised surfaces */
+    --cream:      #F4ECDE;   /* primary text */
+    --faded:      #BBAECF;   /* secondary text */
+    --spark:      #E9BA4F;   /* gold sparkle accent */
+    --rose:       #E484A9;   /* playful rose secondary */
+    --hairline:   rgba(233,186,79,.30);
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{
+    background:var(--twilight);
+    color:var(--cream);
+    font-family:'Karla',sans-serif;
+    font-size:17px;
+    line-height:1.65;
+    -webkit-font-smoothing:antialiased;
+  }
+  h1,h2,h3{font-family:'Cormorant Garamond',serif;font-weight:500;line-height:1.12}
+  a{color:var(--spark)}
+  a:focus-visible,button:focus-visible{outline:2px solid var(--spark);outline-offset:3px;border-radius:2px}
+  .wrap{max-width:1060px;margin:0 auto;padding:0 24px}
+  .eyebrow{
+    font-size:12px;letter-spacing:.26em;text-transform:uppercase;
+    color:var(--spark);font-weight:700;
+  }
+  .glint{color:var(--spark)}
+
+  /* ── Header ─────────────────────────────── */
+  header{padding:26px 0;border-bottom:1px solid var(--hairline)}
+  header .wrap{display:flex;align-items:baseline;justify-content:space-between;gap:16px;flex-wrap:wrap}
+  .wordmark{
+    font-family:'Cormorant Garamond',serif;font-size:26px;letter-spacing:.04em;
+    color:var(--cream);text-decoration:none;
+  }
+  .wordmark .glint{font-size:18px;vertical-align:2px}
+  nav{display:flex;gap:26px;flex-wrap:wrap}
+  nav a{color:var(--faded);text-decoration:none;font-size:14px;letter-spacing:.06em}
+  nav a:hover{color:var(--spark)}
+
+  /* ── Hero with star field ───────────────── */
+  .hero{position:relative;padding:118px 0 100px;text-align:center;overflow:hidden}
+  .hero::before{
+    content:"";position:absolute;inset:0;pointer-events:none;
+    background:radial-gradient(ellipse 62% 55% at 50% 32%, rgba(233,186,79,.14), transparent 70%);
+  }
+  .stars{position:absolute;inset:0;pointer-events:none}
+  .stars i{
+    position:absolute;font-style:normal;color:var(--spark);
+    animation:twinkle 3.4s ease-in-out infinite;
+  }
+  .stars i:nth-child(2){animation-delay:.7s;color:var(--rose)}
+  .stars i:nth-child(3){animation-delay:1.3s}
+  .stars i:nth-child(4){animation-delay:2s;color:var(--rose)}
+  .stars i:nth-child(5){animation-delay:2.6s}
+  .stars i:nth-child(6){animation-delay:1.7s}
+  @keyframes twinkle{0%,100%{opacity:.25;transform:scale(.85)}50%{opacity:1;transform:scale(1.1)}}
+  @media (prefers-reduced-motion: reduce){
+    .stars i{animation:none;opacity:.6}
+    html{scroll-behavior:auto}
+  }
+  .hero h1{font-size:clamp(46px,7.5vw,84px);margin:18px 0 22px}
+  .hero h1 em{color:var(--spark);font-style:italic}
+  .hero p{max-width:540px;margin:0 auto 38px;color:var(--faded);font-size:18px}
+  .btn{
+    display:inline-block;padding:14px 34px;
+    border:1px solid var(--spark);color:var(--spark);
+    text-decoration:none;font-size:14px;letter-spacing:.14em;text-transform:uppercase;font-weight:700;
+    background:transparent;transition:background .25s,color .25s;
+  }
+  .btn:hover{background:var(--spark);color:var(--twilight)}
+  .btn.solid{background:var(--spark);color:var(--twilight)}
+  .btn.solid:hover{background:transparent;color:var(--spark)}
+
+  .spark-divider{
+    display:flex;justify-content:center;gap:22px;margin-top:64px;
+    color:var(--spark);font-size:14px;letter-spacing:.4em;
+  }
+  .spark-divider span:nth-child(2){color:var(--rose)}
+
+  section{padding:88px 0}
+  .section-head{text-align:center;margin-bottom:56px}
+  .section-head h2{font-size:clamp(32px,4.5vw,46px);margin-top:14px}
+
+  /* ── Services as tarot cards ────────────── */
+  .cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:28px}
+  .card{
+    background:var(--velvet);border:1px solid var(--hairline);padding:10px;
+    transition:transform .3s ease, box-shadow .3s ease;position:relative;
+  }
+  .card:hover{transform:translateY(-6px) rotate(-.5deg);box-shadow:0 18px 44px rgba(0,0,0,.5)}
+  .card:hover .corner{opacity:1}
+  .corner{
+    position:absolute;top:14px;right:16px;color:var(--rose);
+    opacity:.45;transition:opacity .3s;font-size:15px;
+  }
+  .card-inner{
+    border:1px solid var(--hairline);padding:36px 26px 30px;height:100%;
+    display:flex;flex-direction:column;text-align:center;
+  }
+  .card .numeral{font-family:'Cormorant Garamond',serif;color:var(--spark);font-size:20px;letter-spacing:.3em}
+  .card h3{font-size:30px;margin:14px 0 4px}
+  .card .sub{font-size:13px;color:var(--rose);letter-spacing:.18em;text-transform:uppercase;margin-bottom:18px}
+  .card p{color:var(--faded);font-size:15.5px;flex:1}
+  .card .price{font-family:'Cormorant Garamond',serif;font-size:34px;color:var(--cream);margin:22px 0 6px}
+  .card .price small{font-size:15px;color:var(--faded);font-family:'Karla',sans-serif}
+  .card .btn{margin-top:14px}
+
+  /* ── About ──────────────────────────────── */
+  .about{border-top:1px solid var(--hairline);border-bottom:1px solid var(--hairline);background:var(--velvet)}
+  .about .wrap{display:grid;grid-template-columns:1fr 1.4fr;gap:56px;align-items:center}
+  @media(max-width:760px){.about .wrap{grid-template-columns:1fr}}
+  .portrait{aspect-ratio:3/4;border:1px solid var(--hairline);padding:10px}
+  .portrait-inner{
+    height:100%;border:1px solid var(--hairline);
+    display:flex;align-items:center;justify-content:center;
+    color:var(--faded);font-size:14px;letter-spacing:.1em;
+    background:radial-gradient(circle at 50% 35%, rgba(233,186,79,.14), transparent 60%),var(--twilight);
+  }
+  .about h2{font-size:clamp(30px,4vw,42px);margin:12px 0 20px}
+  .about p{color:var(--faded);margin-bottom:16px}
+
+  /* ── Process ────────────────────────────── */
+  .steps{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:40px;counter-reset:step}
+  .step h3{font-size:24px;margin:10px 0 8px}
+  .step p{color:var(--faded);font-size:15.5px}
+  .step::before{
+    counter-increment:step;
+    content:counter(step,upper-roman);
+    font-family:'Cormorant Garamond',serif;
+    color:var(--spark);font-size:22px;letter-spacing:.2em;
+  }
+
+  /* ── Contact / payment ──────────────────── */
+  .contact{background:var(--velvet);border-top:1px solid var(--hairline)}
+  .contact .wrap{text-align:center;max-width:640px}
+  .contact h2{font-size:clamp(30px,4vw,42px);margin:12px 0 18px}
+  .contact p{color:var(--faded);margin-bottom:26px}
+  .paylinks{display:flex;gap:16px;justify-content:center;flex-wrap:wrap;margin-top:8px}
+
+  footer{padding:40px 0;text-align:center;color:var(--faded);font-size:13px}
+  footer .spark-divider{margin:0 0 18px}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap">
+    <a class="wordmark" href="#">Stina <span class="glint">✦</span> Sparkles</a>
+    <nav>
+      <a href="#services">Services</a>
+      <a href="#about">About</a>
+      <a href="#process">How it works</a>
+      <a href="#book">Book</a>
+    </nav>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="stars" aria-hidden="true">
+    <i style="top:18%;left:14%">✦</i>
+    <i style="top:30%;left:82%">✦</i>
+    <i style="top:64%;left:8%">✦</i>
+    <i style="top:12%;left:60%">✦</i>
+    <i style="top:70%;left:88%">✦</i>
+    <i style="top:52%;left:26%">✦</i>
+  </div>
+  <div class="wrap">
+    <p class="eyebrow">Tarot · Reiki · Spellwork</p>
+    <h1>Spark up<br><em>your life</em></h1>
+    <!-- EDIT: intro line — swap in Stina's own voice -->
+    <p>Intuitive tarot readings, reiki energy work, and custom spellwork with Stina Sparkles — honest magic, offered with warmth.</p>
+    <a class="btn solid" href="#book">Book a session</a>
+    <div class="spark-divider" aria-hidden="true"><span>✦</span><span>✦</span><span>✦</span></div>
+  </div>
+</section>
+
+<section id="services">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="eyebrow">Offerings</p>
+      <h2>Choose your card</h2>
+    </div>
+    <div class="cards">
+
+      <!-- EDIT: each card = one service. Change names, copy, prices,
+           and point each button at a Stripe Payment Link, Cal.com
+           booking link, or Venmo URL. -->
+      <article class="card">
+        <span class="corner" aria-hidden="true">✦</span>
+        <div class="card-inner">
+          <span class="numeral">I</span>
+          <h3>Tarot Reading</h3>
+          <p class="sub">The Cards</p>
+          <p>A full-spread intuitive reading for the question you're carrying — love, work, crossroads, or the thing you can't quite name. Over video or in writing.</p>
+          <p class="price">$65 <small>/ 45 min</small></p>
+          <!-- EDIT: replace with her real Cal.com event link -->
+          <a class="btn" href="https://cal.com/stina-sparkles/tarot-reading">Book this</a>
+        </div>
+      </article>
+
+      <article class="card">
+        <span class="corner" aria-hidden="true">✦</span>
+        <div class="card-inner">
+          <span class="numeral">II</span>
+          <h3>Reiki Session</h3>
+          <p class="sub">The Hands</p>
+          <p>Gentle energy work to clear what's stagnant and restore what's depleted. Distance sessions available — energy doesn't check the mileage.</p>
+          <p class="price">$80 <small>/ 60 min</small></p>
+          <!-- EDIT: replace with her real Cal.com event link -->
+          <a class="btn" href="https://cal.com/stina-sparkles/reiki-session">Book this</a>
+        </div>
+      </article>
+
+      <article class="card">
+        <span class="corner" aria-hidden="true">✦</span>
+        <div class="card-inner">
+          <span class="numeral">III</span>
+          <h3>Custom Spellwork</h3>
+          <p class="sub">The Craft</p>
+          <p>Ritual craft built around your intention — protection, release, drawing in, letting go. Includes a consultation and a full write-up of the working.</p>
+          <p class="price">from $95</p>
+          <!-- EDIT: replace with her real Cal.com event link (a free 15-min consult works well for custom work) -->
+          <a class="btn" href="https://cal.com/stina-sparkles/spellwork-consult">Inquire</a>
+        </div>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<section id="about" class="about">
+  <div class="wrap">
+    <div class="portrait">
+      <!-- EDIT: replace this div with <img src="stina.jpg" alt="Stina Sparkles"> -->
+      <div class="portrait-inner">Stina's photo here</div>
+    </div>
+    <div>
+      <p class="eyebrow">About</p>
+      <h2>Hi, I'm Stina <span class="glint">✦</span></h2>
+      <!-- EDIT: her real bio, in her voice -->
+      <p>I came to the cards the way most of us do — in a season when the ordinary answers stopped being enough. Years later, this work is how I help people hear what they already know.</p>
+      <p>My practice blends traditional tarot, Usui reiki, and folk craft studied with care. No doom, no fear-selling, no telling you you're cursed for an upsell. Just honest magic, done with love.</p>
+    </div>
+  </div>
+</section>
+
+<section id="process">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="eyebrow">How it works</p>
+      <h2>Three simple steps</h2>
+    </div>
+    <div class="steps">
+      <div class="step">
+        <h3>Choose &amp; book</h3>
+        <p>Pick an offering and grab a time that works for you. You'll get a confirmation with everything you need.</p>
+      </div>
+      <div class="step">
+        <h3>Set your intention</h3>
+        <p>Before we meet, sit with your question. You don't need it polished — arriving curious is enough.</p>
+      </div>
+      <div class="step">
+        <h3>The session</h3>
+        <p>We meet over video or in person. Afterward you'll receive notes from your reading or working to keep.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="book" class="contact">
+  <div class="wrap">
+    <p class="eyebrow">Booking &amp; payment</p>
+    <h2>Ready when you are</h2>
+    <!-- EDIT: contact email + Instagram -->
+    <p>Book directly below, or reach out first with questions at
+      <a href="mailto:hello@example.com">hello@example.com</a> ·
+      <a href="https://instagram.com/yourhandle">@yourhandle</a></p>
+    <div class="paylinks">
+      <!-- EDIT: point these at real links.
+           Stripe Payment Link → https://buy.stripe.com/xxxx
+           Venmo              → https://venmo.com/u/her-username
+           Cal.com booking    → https://cal.com/stina/tarot
+           Zelle has no public link — list her Zelle email/phone as text. -->
+      <!-- EDIT: point at her main Cal.com page + real Venmo -->
+      <a class="btn solid" href="https://cal.com/stina-sparkles">Book a time</a>
+      <a class="btn" href="https://venmo.com/u/her-username">Pay with Venmo</a>
+    </div>
+
+    <!-- ═══════════════════════════════════════════════════════════
+         OPTIONAL: embed the calendar directly on the page instead of
+         linking out. Once Stina has a Cal.com account, uncomment this
+         block and replace "stina-sparkles" with her real Cal username.
+         Clients then pick a time (and pay, if Stripe is connected)
+         without ever leaving the site.
+
+    <div id="cal-embed" style="width:100%;min-height:640px;margin-top:48px;border:1px solid var(--hairline);padding:10px"></div>
+    <script type="text/javascript">
+      (function (C, A, L) {
+        let p = function (a, ar) { a.q.push(ar); };
+        let d = C.document;
+        C.Cal = C.Cal || function () {
+          let cal = C.Cal, ar = arguments;
+          if (!cal.loaded) {
+            cal.ns = {}; cal.q = cal.q || [];
+            d.head.appendChild(d.createElement("script")).src = A;
+            cal.loaded = true;
+          }
+          p(cal, ar);
+        };
+      })(window, "https://app.cal.com/embed/embed.js", "init");
+      Cal("init", { origin: "https://cal.com" });
+      Cal("inline", {
+        elementOrSelector: "#cal-embed",
+        calLink: "stina-sparkles",
+        config: { theme: "dark" }
+      });
+    </script>
+    ═══════════════════════════════════════════════════════════ -->
+  </div>
+</section>
+
+<footer>
+  <div class="spark-divider" aria-hidden="true"><span>✦</span><span>✦</span><span>✦</span></div>
+  <p>© 2026 Stina Sparkles · Spark Up Your Life · Readings are for insight and reflection, not a substitute for medical, legal, or financial advice.</p>
+</footer>
+
+</body>
+</html>

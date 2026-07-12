@@ -109,10 +109,18 @@ section{padding:88px 0}
 .card .price small{font-size:15px;color:var(--faded);font-family:'Karla',sans-serif}
 .card .btn{margin-top:14px}
 
+.service-menu{
+  margin-top:28px;background:var(--velvet);border:1px solid var(--hairline);padding:10px;
+}
+.service-menu-inner{
+  border:1px solid var(--hairline);padding:40px 32px;text-align:center;
+}
+.service-menu-inner h3{font-size:28px;margin:12px 0 30px}
+
 .variants{
-  list-style:none;text-align:left;margin-top:24px;padding-top:20px;
-  border-top:1px solid var(--hairline);
+  list-style:none;text-align:left;
   display:flex;flex-direction:column;gap:16px;
+  max-width:480px;margin:0 auto;
 }
 .variant{display:flex;align-items:center;justify-content:space-between;gap:12px}
 .variant-info{display:flex;flex-direction:column;gap:2px}

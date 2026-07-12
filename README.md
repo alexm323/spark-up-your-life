@@ -96,10 +96,9 @@ for the real thing before (or shortly after) launch. All of these live in
       instead of a portrait. Replace the `.portrait-inner` placeholder in
       [`src/components/About.tsx`](src/components/About.tsx) with an
       `<img>` once a photo is available.
-- [ ] **Canonical domain** — `business.siteUrl` is `https://example.com`.
-      Update it once the real domain is live, and update the hardcoded
-      domain in [`public/sitemap.xml`](public/sitemap.xml) and
-      [`public/robots.txt`](public/robots.txt) to match.
+- [x] **Canonical domain** — `business.siteUrl` is now `https://www.stinasparkles.com`,
+      matching [`public/sitemap.xml`](public/sitemap.xml) and
+      [`public/robots.txt`](public/robots.txt).
 
 Once Stina has a real Cal.com account, there's also an optional inline
 booking widget: see the commented-out block in

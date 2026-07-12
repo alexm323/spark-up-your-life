@@ -59,7 +59,7 @@ export const site: SiteContent = {
     },
     venmoUrl: 'https://venmo.com/u/her-username',
     bookingUrl: 'https://cal.com/stina-sparkles',
-    siteUrl: 'https://example.com',
+    siteUrl: 'https://www.stinasparkles.com',
   },
   services: [
     {

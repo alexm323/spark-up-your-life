@@ -101,7 +101,7 @@ export const site: SiteContent = {
   about: {
     heading: "Hi, I'm Stina",
     paragraphs: [
-      "I was born sensitive. I picked up on things long before I had words for them, and tarot gave me a way to work with that instead of just carrying it around.",
+      "I'm an empath. I've always picked up on things before I had words for them, whether that's a feeling in a room or an image that flashes through my mind like it isn't even mine. I'd call myself a little clairvoyant, honestly. Tarot gave me a way to actually use all that instead of just carrying it around.",
       "I trained in traditional tarot and Usui reiki, and I still learn something new with almost every reading.",
     ],
   },

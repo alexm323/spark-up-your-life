@@ -8,6 +8,7 @@
   --hairline: rgba(233, 186, 79, 0.3);
 }
 *{box-sizing:border-box;margin:0;padding:0}
+button{font:inherit;background:none;border:none;color:inherit}
 html{scroll-behavior:smooth}
 body{
   background:var(--twilight);
@@ -107,6 +108,17 @@ section{padding:88px 0}
 .card .price{font-family:'Cormorant Garamond',serif;font-size:34px;color:var(--cream);margin:22px 0 6px}
 .card .price small{font-size:15px;color:var(--faded);font-family:'Karla',sans-serif}
 .card .btn{margin-top:14px}
+
+.variants{
+  list-style:none;text-align:left;margin-top:24px;padding-top:20px;
+  border-top:1px solid var(--hairline);
+  display:flex;flex-direction:column;gap:16px;
+}
+.variant{display:flex;align-items:center;justify-content:space-between;gap:12px}
+.variant-info{display:flex;flex-direction:column;gap:2px}
+.variant-name{font-family:'Cormorant Garamond',serif;font-size:18px;color:var(--cream)}
+.variant-price{font-size:13px;color:var(--faded)}
+.variant .btn{margin-top:0;padding:8px 18px;font-size:11px;flex-shrink:0}
 
 /* ── About ──────────────────────────────── */
 .about{border-top:1px solid var(--hairline);border-bottom:1px solid var(--hairline);background:var(--velvet)}

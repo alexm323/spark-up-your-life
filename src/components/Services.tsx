@@ -1,11 +1,19 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import { site, type Service } from '../content/site'
 
 const MENU_ID = 'service-menu'
 
 export function Services() {
   const [expandedId, setExpandedId] = useState<string | null>(null)
-  const expandedService = site.services.find((s) => s.id === expandedId) ?? null
+  const [panelService, setPanelService] = useState<Service | null>(null)
+
+  // Keep the last-opened service rendered while the panel animates shut,
+  // instead of clearing its content immediately.
+  useEffect(() => {
+    if (expandedId) {
+      setPanelService(site.services.find((s) => s.id === expandedId) ?? null)
+    }
+  }, [expandedId])
 
   return (
     <section id="services">
@@ -26,7 +34,7 @@ export function Services() {
             />
           ))}
         </div>
-        {expandedService && <ServiceMenu service={expandedService} />}
+        <ServiceMenu service={panelService} isOpen={expandedId !== null} />
       </div>
     </section>
   )
@@ -69,28 +77,38 @@ function ServiceCard({
   )
 }
 
-function ServiceMenu({ service }: { service: Service }) {
+function ServiceMenu({ service, isOpen }: { service: Service | null; isOpen: boolean }) {
   return (
-    <div className="service-menu" id={MENU_ID}>
-      <div className="service-menu-inner">
-        <p className="eyebrow">{service.cardTitle}</p>
-        <h3>{service.name}</h3>
-        <ul className="variants">
-          {service.variants.map((variant) => (
-            <li className="variant" key={variant.name}>
-              <span className="variant-info">
-                <span className="variant-name">{variant.name}</span>
-                <span className="variant-price">
-                  {variant.price}
-                  {variant.priceNote && ` ${variant.priceNote}`}
-                </span>
-              </span>
-              <a className="btn" href={variant.bookingUrl}>
-                Book this
-              </a>
-            </li>
-          ))}
-        </ul>
+    <div
+      className={`service-menu${isOpen ? ' is-open' : ''}`}
+      id={MENU_ID}
+      aria-hidden={!isOpen}
+    >
+      <div className="service-menu-frame">
+        <div className="service-menu-inner">
+          {service && (
+            <>
+              <p className="eyebrow">{service.cardTitle}</p>
+              <h3>{service.name}</h3>
+              <ul className="variants">
+                {service.variants.map((variant) => (
+                  <li className="variant" key={variant.name}>
+                    <span className="variant-info">
+                      <span className="variant-name">{variant.name}</span>
+                      <span className="variant-price">
+                        {variant.price}
+                        {variant.priceNote && ` ${variant.priceNote}`}
+                      </span>
+                    </span>
+                    <a className="btn" href={variant.bookingUrl}>
+                      Book this
+                    </a>
+                  </li>
+                ))}
+              </ul>
+            </>
+          )}
+        </div>
       </div>
     </div>
   )

@@ -109,11 +109,19 @@ section{padding:88px 0}
 .card .price small{font-size:15px;color:var(--faded);font-family:'Karla',sans-serif}
 .card .btn{margin-top:14px}
 
+/* Reserved slide distance for the service menu — fixed so the animation
+   stays consistent regardless of how many variants a service lists. */
 .service-menu{
-  margin-top:28px;background:var(--velvet);border:1px solid var(--hairline);padding:10px;
+  max-height:0;margin-top:0;overflow:hidden;
+  transition:max-height .45s ease, margin-top .45s ease;
+}
+.service-menu.is-open{max-height:620px;margin-top:28px}
+.service-menu-frame{
+  background:var(--velvet);border:1px solid var(--hairline);padding:10px;
 }
 .service-menu-inner{
   border:1px solid var(--hairline);padding:40px 32px;text-align:center;
+  max-height:598px;overflow-y:auto;
 }
 .service-menu-inner h3{font-size:28px;margin:12px 0 30px}
 

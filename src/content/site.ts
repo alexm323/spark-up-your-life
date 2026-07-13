@@ -80,7 +80,7 @@ export const site: SiteContent = {
       url: 'https://instagram.com/stststina',
     },
     venmoUrl: 'https://venmo.com/u/Steenuhmarr',
-    cashAppUrl: 'https://cash.app/$her-cashtag',
+    cashAppUrl: 'https://cash.app/$StinaSparkles',
     zelle: 'her-email@example.com',
     bookingUrl: 'https://cal.com/stina-sparkles',
     siteUrl: 'https://www.stinasparkles.com',

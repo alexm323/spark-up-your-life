@@ -88,9 +88,8 @@ for the real thing before (or shortly after) launch. All of these live in
       exists.
 - [x] **Venmo URL** — `business.venmoUrl` points at the real
       `venmo.com/u/Steenuhmarr`.
-- [ ] **Cash App URL** — `business.cashAppUrl` currently points at
-      `cash.app/$her-cashtag`. Needs her real `$Cashtag` (from her Cash App
-      profile/QR code) to build `https://cash.app/$HerCashtag`.
+- [x] **Cash App URL** — `business.cashAppUrl` points at the real
+      `cash.app/$StinaSparkles`.
 - [ ] **Zelle** — `business.zelle` is a placeholder email
       (`her-email@example.com`). Zelle has no shareable payment link, so
       this is shown as plain text on the site — replace it with whatever

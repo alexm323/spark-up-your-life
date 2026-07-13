@@ -435,8 +435,9 @@ export const site: SiteContent = {
   about: {
     heading: "Hi, I'm Stina",
     paragraphs: [
-      "I'm an empath. I've always picked up on things before I had words for them, whether that's a feeling in a room or an image that flashes through my mind like it isn't even mine. I'd call myself a little clairvoyant, honestly. Tarot gave me a way to actually use all that instead of just carrying it around.",
-      "I trained in traditional tarot and Usui reiki, and I still learn something new with almost every reading.",
+      'My name is Stina Sparkles. I am classically trained in Santeria and baptized into voodoo. I am certified in Reiki clearing and chakra alignment. I have been practicing tarot reading for the past 15 years and casting publicly for the last eight years.',
+      'I thrive by giving guidance and helping people where they need it most. I enjoy having people think differently and outside of the box with my spell work, guidance and oils. Everything I do is custom to the client and situation so there will be no repeat of anything. I fully embrace light magic work, but I also am not afraid to do baneful.',
+      'Allow me to help you, spark up your life!',
     ],
   },
   process: {

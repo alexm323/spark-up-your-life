@@ -212,6 +212,7 @@ section{padding:88px 0}
 .contact p{color:var(--faded);margin-bottom:26px}
 .paylinks{display:flex;gap:16px;justify-content:center;flex-wrap:wrap;margin-top:8px}
 .instagram-link{display:inline-flex;align-items:center;gap:5px;vertical-align:middle}
+.zelle-note{margin-top:18px;margin-bottom:0;font-size:13.5px;color:var(--faded)}
 
 footer{padding:40px 0;text-align:center;color:var(--faded);font-size:13px}
 footer .spark-divider{margin:0 0 18px}

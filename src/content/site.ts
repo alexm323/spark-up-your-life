@@ -8,6 +8,8 @@ export interface Business {
     url: string
   }
   venmoUrl: string
+  cashAppUrl: string
+  zelle: string
   bookingUrl: string
   siteUrl: string
 }
@@ -77,7 +79,9 @@ export const site: SiteContent = {
       handle: '@stststina',
       url: 'https://instagram.com/stststina',
     },
-    venmoUrl: 'https://venmo.com/u/her-username',
+    venmoUrl: 'https://venmo.com/u/Steenuhmarr',
+    cashAppUrl: 'https://cash.app/$her-cashtag',
+    zelle: 'her-email@example.com',
     bookingUrl: 'https://cal.com/stina-sparkles',
     siteUrl: 'https://www.stinasparkles.com',
   },

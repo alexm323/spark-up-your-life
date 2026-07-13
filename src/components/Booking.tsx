@@ -39,7 +39,11 @@ export function Booking() {
           <a className="btn" href={site.business.venmoUrl}>
             Pay with Venmo
           </a>
+          <a className="btn" href={site.business.cashAppUrl}>
+            Pay with Cash App
+          </a>
         </div>
+        <p className="zelle-note">Zelle: {site.business.zelle}</p>
 
         {/*
           OPTIONAL: embed the calendar directly on the page instead of

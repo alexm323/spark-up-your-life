@@ -86,8 +86,17 @@ for the real thing before (or shortly after) launch. All of these live in
 - [ ] **Cal.com username** — replace `stina-sparkles` in `business.bookingUrl`
       and each service's `bookingUrl` once Stina's real Cal.com account
       exists.
-- [ ] **Venmo URL** — `business.venmoUrl` currently points at
-      `venmo.com/u/her-username`.
+- [x] **Venmo URL** — `business.venmoUrl` points at the real
+      `venmo.com/u/Steenuhmarr`.
+- [ ] **Cash App URL** — `business.cashAppUrl` currently points at
+      `cash.app/$her-cashtag`. Needs her real `$Cashtag` (from her Cash App
+      profile/QR code) to build `https://cash.app/$HerCashtag`.
+- [ ] **Zelle** — `business.zelle` is a placeholder email
+      (`her-email@example.com`). Zelle has no shareable payment link, so
+      this is shown as plain text on the site — replace it with whatever
+      email or phone number her Zelle account is registered to (if she'd
+      rather not share, this line can just be removed from
+      `src/components/Booking.tsx`).
 - [ ] **Email** — `business.email` is still `hello@example.com`. It's not
       currently shown anywhere on the site (the Booking section only shows
       Instagram), so this only matters if a real email gets displayed again

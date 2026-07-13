@@ -81,7 +81,7 @@ export const site: SiteContent = {
     },
     venmoUrl: 'https://venmo.com/u/Steenuhmarr',
     cashAppUrl: 'https://cash.app/$StinaSparkles',
-    zelle: 'her-email@example.com',
+    zelle: 'alebensti@gmail.com',
     bookingUrl: 'https://cal.com/stina-sparkles',
     siteUrl: 'https://www.stinasparkles.com',
   },

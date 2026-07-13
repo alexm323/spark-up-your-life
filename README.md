@@ -90,12 +90,9 @@ for the real thing before (or shortly after) launch. All of these live in
       `venmo.com/u/Steenuhmarr`.
 - [x] **Cash App URL** — `business.cashAppUrl` points at the real
       `cash.app/$StinaSparkles`.
-- [ ] **Zelle** — `business.zelle` is a placeholder email
-      (`her-email@example.com`). Zelle has no shareable payment link, so
-      this is shown as plain text on the site — replace it with whatever
-      email or phone number her Zelle account is registered to (if she'd
-      rather not share, this line can just be removed from
-      `src/components/Booking.tsx`).
+- [x] **Zelle** — `business.zelle` is her real Zelle email
+      (`alebensti@gmail.com`), shown as plain text on the site since Zelle
+      has no shareable payment link.
 - [ ] **Email** — `business.email` is still `hello@example.com`. It's not
       currently shown anywhere on the site (the Booking section only shows
       Instagram), so this only matters if a real email gets displayed again

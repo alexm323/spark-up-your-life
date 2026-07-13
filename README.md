@@ -70,8 +70,8 @@ The file is organized into five sections:
 - **`services`** — one entry per service card (Tarot Reading, Reiki
   Session, Custom Spellwork). Add, remove, or reorder entries here to
   change what's offered.
-- **`previousSpells`** — the heading, intro line, and photo gallery for the
-  "Previous Spells" section. Each photo has a `caption` (shown on the
+- **`previousSpells`** — the heading and photo gallery for the "Previous
+  Spells" section. Each photo has a `caption` (shown on the
   photo, e.g. "Domination Spell") and an `alt` (screen-reader text). Add,
   remove, or reorder entries in the `gallery` array to change what's shown.
 - **`about`** — the bio heading, paragraphs, and photo gallery on the About

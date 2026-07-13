@@ -8,7 +8,6 @@ export function PreviousSpells() {
         <div className="section-head">
           <p className="eyebrow">Past Work</p>
           <h2>{site.previousSpells.heading}</h2>
-          <p className="spells-intro">{site.previousSpells.intro}</p>
         </div>
         <div className="spells-gallery">
           <Gallery images={site.previousSpells.gallery} />

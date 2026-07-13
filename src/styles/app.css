@@ -202,7 +202,6 @@ section{padding:88px 0}
 .gallery-dot.is-active{background:var(--spark)}
 
 /* ── Previous Spells ────────────────────── */
-.spells-intro{color:var(--faded);max-width:480px;margin:0 auto}
 .spells-gallery{max-width:340px;margin:0 auto}
 
 /* ── Process ────────────────────────────── */

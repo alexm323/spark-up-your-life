@@ -54,7 +54,6 @@ export interface About {
 
 export interface PreviousSpells {
   heading: string
-  intro: string
   gallery: GalleryImage[]
 }
 
@@ -452,7 +451,6 @@ export const site: SiteContent = {
   ],
   previousSpells: {
     heading: 'Previous Spells',
-    intro: "A few workings from the altar, so you can see the craft before you book.",
     gallery: [
       {
         src: '/images/spells/cord-cutting.jpg',

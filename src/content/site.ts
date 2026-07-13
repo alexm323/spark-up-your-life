@@ -38,9 +38,15 @@ export interface Service {
   menuGroups: MenuGroup[]
 }
 
+export interface GalleryImage {
+  src: string
+  alt: string
+}
+
 export interface About {
   heading: string
   paragraphs: string[]
+  gallery: GalleryImage[]
 }
 
 export interface ProcessStep {
@@ -438,6 +444,14 @@ export const site: SiteContent = {
       'My name is Stina Sparkles. I am classically trained in Santeria and baptized into voodoo. I am certified in Reiki clearing and chakra alignment. I have been practicing tarot reading for the past 15 years and casting publicly for the last eight years.',
       'I thrive by giving guidance and helping people where they need it most. I enjoy having people think differently and outside of the box with my spell work, guidance and oils. Everything I do is custom to the client and situation so there will be no repeat of anything. I fully embrace light magic work, but I also am not afraid to do baneful.',
       'Allow me to help you, spark up your life!',
+    ],
+    // Placeholder photos — replace the files in public/images/about/ (and
+    // update alt text below) once real photos are ready. See README.
+    gallery: [
+      { src: '/images/about/photo-1.svg', alt: 'Stina Sparkles, photo 1' },
+      { src: '/images/about/photo-2.svg', alt: 'Stina Sparkles, photo 2' },
+      { src: '/images/about/photo-3.svg', alt: 'Stina Sparkles, photo 3' },
+      { src: '/images/about/photo-4.svg', alt: 'Stina Sparkles, photo 4' },
     ],
   },
   process: {

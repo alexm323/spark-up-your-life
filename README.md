@@ -70,7 +70,8 @@ The file is organized into four sections:
 - **`services`** — one entry per service card (Tarot Reading, Reiki
   Session, Custom Spellwork). Add, remove, or reorder entries here to
   change what's offered.
-- **`about`** — the bio heading and paragraphs on the About section.
+- **`about`** — the bio heading, paragraphs, and photo gallery on the About
+  section.
 - **`process`** — the three "how it works" steps.
 
 After editing, run `npm run dev` to preview your changes locally, then
@@ -90,12 +91,13 @@ for the real thing before (or shortly after) launch. All of these live in
 - [ ] **Email** — `business.email` is `hello@example.com`.
 - [ ] **Instagram** — `business.instagram.handle` and `.url` are
       placeholders.
-- [ ] **Bio text** — `about.paragraphs` is starter copy; swap in Stina's
-      real voice.
-- [ ] **Photo** — the About section currently shows a text placeholder
-      instead of a portrait. Replace the `.portrait-inner` placeholder in
-      [`src/components/About.tsx`](src/components/About.tsx) with an
-      `<img>` once a photo is available.
+- [x] **Bio text** — `about.paragraphs` is Stina's real bio.
+- [ ] **Gallery photos** — `about.gallery` in `site.ts` currently points at
+      4 placeholder SVGs in [`public/images/about/`](public/images/about).
+      Replace those files with real photos (resize to ~1600px on the long
+      edge, compress to keep each file under ~300KB) and update the `alt`
+      text for each entry. Add or remove entries in the array to add or
+      remove photos — the gallery grid and lightbox adapt automatically.
 - [x] **Canonical domain** — `business.siteUrl` is now `https://www.stinasparkles.com`,
       matching [`public/sitemap.xml`](public/sitemap.xml) and
       [`public/robots.txt`](public/robots.txt).

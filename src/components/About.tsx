@@ -1,12 +1,11 @@
 import { site } from '../content/site'
+import { Gallery } from './Gallery'
 
 export function About() {
   return (
     <section id="about" className="about">
       <div className="wrap">
-        <div className="portrait" role="img" aria-label={`Portrait of ${site.business.practitioner}`}>
-          <div className="portrait-inner">{site.business.practitioner}'s photo here</div>
-        </div>
+        <Gallery images={site.about.gallery} />
         <div>
           <p className="eyebrow">About</p>
           <h2>

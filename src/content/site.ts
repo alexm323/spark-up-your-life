@@ -43,11 +43,18 @@ export interface Service {
 export interface GalleryImage {
   src: string
   alt: string
+  caption?: string
 }
 
 export interface About {
   heading: string
   paragraphs: string[]
+  gallery: GalleryImage[]
+}
+
+export interface PreviousSpells {
+  heading: string
+  intro: string
   gallery: GalleryImage[]
 }
 
@@ -64,6 +71,7 @@ export interface Process {
 export interface SiteContent {
   business: Business
   services: Service[]
+  previousSpells: PreviousSpells
   about: About
   process: Process
 }
@@ -442,6 +450,62 @@ export const site: SiteContent = {
       ],
     },
   ],
+  previousSpells: {
+    heading: 'Previous Spells',
+    intro: "A few workings from the altar, so you can see the craft before you book.",
+    gallery: [
+      {
+        src: '/images/spells/cord-cutting.jpg',
+        alt: 'Two tall candles burning with dramatic flames beside scissors and dried leaves for a cord-cutting ritual',
+        caption: 'Cord Cutting',
+      },
+      {
+        src: '/images/spells/domination-1.jpg',
+        alt: 'A red figure candle burning during a domination working',
+        caption: 'Domination Spell',
+      },
+      {
+        src: '/images/spells/domination-2.jpg',
+        alt: 'A red poppet candle set among stones and shells for a domination spell',
+        caption: 'Domination Spell',
+      },
+      {
+        src: '/images/spells/domination-3.jpg',
+        alt: 'A red figure candle with pins burning on a plate of herbs and crystals for a domination working',
+        caption: 'Domination Spell',
+      },
+      {
+        src: '/images/spells/domination-4.jpg',
+        alt: 'A red human-shaped candle with pins in its head standing in a bowl of herbs',
+        caption: 'Domination Spell',
+      },
+      {
+        src: '/images/spells/glamour-1.jpg',
+        alt: 'A curved red candle burning on a plate of herbs, stones, and shells for a glamour spell',
+        caption: 'Glamour Spell',
+      },
+      {
+        src: '/images/spells/glamour-2.jpg',
+        alt: 'Two slender candles set in ritual soil for a glamour working',
+        caption: 'Glamour Spell',
+      },
+      {
+        src: '/images/spells/love-spell.jpg',
+        alt: 'A two-wick red candle tied with a ribbon bow, burning for a love spell',
+        caption: 'Love Spell',
+      },
+      {
+        src: '/images/spells/road-opener-well-rounded.jpg',
+        alt: 'A ring of candles, citrus slices, and seashells arranged for a road opener ritual',
+        caption: 'Road Opener',
+      },
+      {
+        src: '/images/spells/separation.jpg',
+        alt: 'A black candle marked with sigils and coated in chili flakes for a separation spell',
+        caption: 'Separation Spell',
+      },
+    ],
+  },
   about: {
     heading: "Hi, I'm Stina",
     paragraphs: [

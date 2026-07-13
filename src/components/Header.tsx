@@ -15,6 +15,7 @@ export function Header() {
         </a>
         <nav aria-label="Primary">
           <a href="#services">Services</a>
+          <a href="#spells">Past Work</a>
           <a href="#about">About</a>
           <a href="#process">How it works</a>
           <a href="#book">Book</a>

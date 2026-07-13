@@ -62,14 +62,18 @@ reading, find:
 and edit the `price` or `priceNote` values. Keep the quote marks around
 text, and don't remove any commas.
 
-The file is organized into four sections:
+The file is organized into five sections:
 
 - **`business`** — the studio name, practitioner name, tagline, contact
-  email, Instagram, Venmo link, main booking link, and the site's live URL
-  (used for SEO tags).
+  email, Instagram, Venmo/Cash App/Zelle info, main booking link, and the
+  site's live URL (used for SEO tags).
 - **`services`** — one entry per service card (Tarot Reading, Reiki
   Session, Custom Spellwork). Add, remove, or reorder entries here to
   change what's offered.
+- **`previousSpells`** — the heading, intro line, and photo gallery for the
+  "Previous Spells" section. Each photo has a `caption` (shown on the
+  photo, e.g. "Domination Spell") and an `alt` (screen-reader text). Add,
+  remove, or reorder entries in the `gallery` array to change what's shown.
 - **`about`** — the bio heading, paragraphs, and photo gallery on the About
   section.
 - **`process`** — the three "how it works" steps.

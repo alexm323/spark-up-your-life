@@ -186,13 +186,24 @@ section{padding:88px 0}
 
 /* ── Photo gallery (single image, auto-cycling) ── */
 .gallery-portrait{display:block;width:100%;text-align:left;cursor:pointer}
+.portrait-inner{position:relative}
 .portrait-inner img{width:100%;height:100%;object-fit:cover;display:block}
+.gallery-caption{
+  position:absolute;top:14px;left:14px;
+  background:rgba(33,21,57,.72);color:var(--cream);
+  font-family:'Cormorant Garamond',serif;font-size:15px;letter-spacing:.03em;
+  padding:6px 14px;border:1px solid var(--hairline);
+}
 .gallery-dots{
   position:absolute;left:0;right:0;bottom:22px;
   display:flex;justify-content:center;gap:6px;
 }
 .gallery-dot{width:6px;height:6px;border-radius:50%;background:rgba(244,236,222,.45)}
 .gallery-dot.is-active{background:var(--spark)}
+
+/* ── Previous Spells ────────────────────── */
+.spells-intro{color:var(--faded);max-width:480px;margin:0 auto}
+.spells-gallery{max-width:340px;margin:0 auto}
 
 /* ── Process ────────────────────────────── */
 .steps{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:40px;counter-reset:step}

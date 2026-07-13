@@ -33,10 +33,11 @@ export function Gallery({ images }: { images: GalleryImage[] }) {
       type="button"
       className="portrait gallery-portrait"
       onClick={() => setIndex((i) => (i + 1) % images.length)}
-      aria-label={`${current.alt}. Photo ${index + 1} of ${images.length}. Click for the next photo.`}
+      aria-label={`${current.caption ? current.caption + '. ' : ''}${current.alt}. Photo ${index + 1} of ${images.length}. Click for the next photo.`}
     >
       <span className="portrait-inner">
         <img src={current.src} alt={current.alt} />
+        {current.caption && <span className="gallery-caption">{current.caption}</span>}
       </span>
       {images.length > 1 && (
         <span className="gallery-dots" aria-hidden="true">

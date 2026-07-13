@@ -1,5 +1,5 @@
-import { useEffect, useState } from 'react'
-import { site, type Service } from '../content/site'
+import { useEffect, useRef, useState } from 'react'
+import { site, type MenuItem, type Service } from '../content/site'
 
 const MENU_ID = 'service-menu'
 
@@ -78,38 +78,84 @@ function ServiceCard({
 }
 
 function ServiceMenu({ service, isOpen }: { service: Service | null; isOpen: boolean }) {
+  const showGroupTitles = (service?.menuGroups.length ?? 0) > 1
+  const menuRef = useRef<HTMLDivElement>(null)
+
+  useEffect(() => {
+    if (isOpen && menuRef.current) {
+      const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches
+      menuRef.current.scrollIntoView({
+        behavior: reduceMotion ? 'auto' : 'smooth',
+        block: 'start',
+      })
+    }
+  }, [isOpen, service])
+
   return (
     <div
       className={`service-menu${isOpen ? ' is-open' : ''}`}
       id={MENU_ID}
       aria-hidden={!isOpen}
+      ref={menuRef}
     >
       <div className="service-menu-frame">
-        <div className="service-menu-inner">
+        <div className="service-menu-inner" key={service?.id ?? 'empty'}>
           {service && (
             <>
               <p className="eyebrow">{service.cardTitle}</p>
               <h3>{service.name}</h3>
-              <ul className="variants">
-                {service.variants.map((variant) => (
-                  <li className="variant" key={variant.name}>
-                    <span className="variant-info">
-                      <span className="variant-name">{variant.name}</span>
-                      <span className="variant-price">
-                        {variant.price}
-                        {variant.priceNote && ` ${variant.priceNote}`}
-                      </span>
-                    </span>
-                    <a className="btn" href={variant.bookingUrl}>
-                      Book this
-                    </a>
-                  </li>
-                ))}
-              </ul>
+              {service.menuGroups.map((group) => (
+                <div className="menu-group" key={group.title ?? 'default'}>
+                  {showGroupTitles && group.title && (
+                    <p className="menu-group-title">{group.title}</p>
+                  )}
+                  {group.note && <p className="menu-group-note">{group.note}</p>}
+                  {group.style === 'tags' ? (
+                    <div className="menu-tags">
+                      {group.items.map((item) => (
+                        <span className="menu-tag" key={item.name}>
+                          {item.name}
+                          {item.description && ` (${item.description})`}
+                        </span>
+                      ))}
+                    </div>
+                  ) : (
+                    <ul className="variants">
+                      {group.items.map((item) => (
+                        <VariantRow item={item} key={item.name} />
+                      ))}
+                    </ul>
+                  )}
+                </div>
+              ))}
             </>
           )}
         </div>
       </div>
     </div>
+  )
+}
+
+function VariantRow({ item }: { item: MenuItem }) {
+  return (
+    <li className="variant">
+      <div className="variant-top">
+        <span className="variant-name">{item.name}</span>
+        {item.price && (
+          <span className="variant-price">
+            {item.price}
+            {item.priceNote && ` ${item.priceNote}`}
+          </span>
+        )}
+      </div>
+      {item.description && <p className="variant-desc">{item.description}</p>}
+      {item.bookingUrl && (
+        <div className="variant-actions">
+          <a className="btn" href={item.bookingUrl}>
+            Book this
+          </a>
+        </div>
+      )}
+    </li>
   )
 }

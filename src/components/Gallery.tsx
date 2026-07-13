@@ -1,30 +1,22 @@
 import { useEffect, useState } from 'react'
 import type { GalleryImage } from '../content/site'
 
-export function Gallery({ images }: { images: GalleryImage[] }) {
-  const [activeIndex, setActiveIndex] = useState<number | null>(null)
+const AUTO_ADVANCE_MS = 30000
 
-  const close = () => setActiveIndex(null)
-  const showPrev = () =>
-    setActiveIndex((i) => (i === null ? null : (i - 1 + images.length) % images.length))
-  const showNext = () => setActiveIndex((i) => (i === null ? null : (i + 1) % images.length))
+export function Gallery({ images }: { images: GalleryImage[] }) {
+  const [index, setIndex] = useState(0)
 
   useEffect(() => {
-    if (activeIndex === null) return
+    if (images.length < 2) return
+    const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches
+    if (reduceMotion) return
 
-    document.body.style.overflow = 'hidden'
-    function onKeyDown(e: KeyboardEvent) {
-      if (e.key === 'Escape') close()
-      if (e.key === 'ArrowLeft') showPrev()
-      if (e.key === 'ArrowRight') showNext()
-    }
-    document.addEventListener('keydown', onKeyDown)
+    const timer = setInterval(() => {
+      setIndex((i) => (i + 1) % images.length)
+    }, AUTO_ADVANCE_MS)
 
-    return () => {
-      document.body.style.overflow = ''
-      document.removeEventListener('keydown', onKeyDown)
-    }
-  }, [activeIndex, images.length])
+    return () => clearInterval(timer)
+  }, [index, images.length])
 
   if (images.length === 0) {
     return (
@@ -34,66 +26,28 @@ export function Gallery({ images }: { images: GalleryImage[] }) {
     )
   }
 
-  return (
-    <>
-      <div className="gallery-grid">
-        {images.map((image, i) => (
-          <button
-            type="button"
-            className="gallery-thumb"
-            key={image.src}
-            onClick={() => setActiveIndex(i)}
-          >
-            <img src={image.src} alt={image.alt} loading="lazy" />
-          </button>
-        ))}
-      </div>
+  const current = images[index]
 
-      {activeIndex !== null && (
-        <div
-          className="lightbox"
-          role="dialog"
-          aria-modal="true"
-          aria-label={images[activeIndex].alt}
-          onClick={close}
-        >
-          <button type="button" className="lightbox-close" onClick={close} aria-label="Close">
-            ✕
-          </button>
-          {images.length > 1 && (
-            <button
-              type="button"
-              className="lightbox-nav lightbox-prev"
-              aria-label="Previous photo"
-              onClick={(e) => {
-                e.stopPropagation()
-                showPrev()
-              }}
-            >
-              ‹
-            </button>
-          )}
-          <img
-            className="lightbox-image"
-            src={images[activeIndex].src}
-            alt={images[activeIndex].alt}
-            onClick={(e) => e.stopPropagation()}
-          />
-          {images.length > 1 && (
-            <button
-              type="button"
-              className="lightbox-nav lightbox-next"
-              aria-label="Next photo"
-              onClick={(e) => {
-                e.stopPropagation()
-                showNext()
-              }}
-            >
-              ›
-            </button>
-          )}
-        </div>
+  return (
+    <button
+      type="button"
+      className="portrait gallery-portrait"
+      onClick={() => setIndex((i) => (i + 1) % images.length)}
+      aria-label={`${current.alt}. Photo ${index + 1} of ${images.length}. Click for the next photo.`}
+    >
+      <span className="portrait-inner">
+        <img src={current.src} alt={current.alt} />
+      </span>
+      {images.length > 1 && (
+        <span className="gallery-dots" aria-hidden="true">
+          {images.map((image, i) => (
+            <span
+              key={image.src}
+              className={`gallery-dot${i === index ? ' is-active' : ''}`}
+            />
+          ))}
+        </span>
       )}
-    </>
+    </button>
   )
 }

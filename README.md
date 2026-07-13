@@ -88,16 +88,18 @@ for the real thing before (or shortly after) launch. All of these live in
       exists.
 - [ ] **Venmo URL** — `business.venmoUrl` currently points at
       `venmo.com/u/her-username`.
-- [ ] **Email** — `business.email` is `hello@example.com`.
-- [ ] **Instagram** — `business.instagram.handle` and `.url` are
-      placeholders.
+- [ ] **Email** — `business.email` is still `hello@example.com`. It's not
+      currently shown anywhere on the site (the Booking section only shows
+      Instagram), so this only matters if a real email gets displayed again
+      later.
+- [x] **Instagram** — `business.instagram.handle`/`.url` point at the real
+      `@stststina`.
 - [x] **Bio text** — `about.paragraphs` is Stina's real bio.
-- [ ] **Gallery photos** — `about.gallery` in `site.ts` currently points at
-      4 placeholder SVGs in [`public/images/about/`](public/images/about).
-      Replace those files with real photos (resize to ~1600px on the long
-      edge, compress to keep each file under ~300KB) and update the `alt`
-      text for each entry. Add or remove entries in the array to add or
-      remove photos — the gallery grid and lightbox adapt automatically.
+- [x] **Gallery photos** — `about.gallery` in `site.ts` holds Stina's real
+      photos, resized/compressed into
+      [`public/images/about/`](public/images/about). Add, remove, or
+      reorder entries in the array to change what's in rotation — the
+      gallery adapts automatically.
 - [x] **Canonical domain** — `business.siteUrl` is now `https://www.stinasparkles.com`,
       matching [`public/sitemap.xml`](public/sitemap.xml) and
       [`public/robots.txt`](public/robots.txt).

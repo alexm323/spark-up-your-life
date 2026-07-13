@@ -74,8 +74,8 @@ export const site: SiteContent = {
       "Tarot readings, reiki, and custom spellwork with Stina Sparkles. No judgment, no doom and gloom, just useful answers.",
     email: 'hello@example.com',
     instagram: {
-      handle: '@yourhandle',
-      url: 'https://instagram.com/yourhandle',
+      handle: '@stststina',
+      url: 'https://instagram.com/stststina',
     },
     venmoUrl: 'https://venmo.com/u/her-username',
     bookingUrl: 'https://cal.com/stina-sparkles',
@@ -445,13 +445,17 @@ export const site: SiteContent = {
       'I thrive by giving guidance and helping people where they need it most. I enjoy having people think differently and outside of the box with my spell work, guidance and oils. Everything I do is custom to the client and situation so there will be no repeat of anything. I fully embrace light magic work, but I also am not afraid to do baneful.',
       'Allow me to help you, spark up your life!',
     ],
-    // Placeholder photos — replace the files in public/images/about/ (and
-    // update alt text below) once real photos are ready. See README.
     gallery: [
-      { src: '/images/about/photo-1.svg', alt: 'Stina Sparkles, photo 1' },
-      { src: '/images/about/photo-2.svg', alt: 'Stina Sparkles, photo 2' },
-      { src: '/images/about/photo-3.svg', alt: 'Stina Sparkles, photo 3' },
-      { src: '/images/about/photo-4.svg', alt: 'Stina Sparkles, photo 4' },
+      { src: '/images/about/beach_air_is_the_best.jpg', alt: 'Stina at the beach, eyes closed, facing the ocean breeze' },
+      { src: '/images/about/bunger_at_the_observatory.jpg', alt: 'Stina standing in front of Griffith Observatory on a sunny day' },
+      { src: '/images/about/ducks_and_trees.jpg', alt: 'Stina leaning on a railing surrounded by autumn trees' },
+      { src: '/images/about/heart_as_big_as_mine.jpg', alt: 'Stina smiling inside a giant lit-up wooden heart installation' },
+      { src: '/images/about/heart_at_beach.jpg', alt: "Stina making a heart shape with her hands on a pier at sunset" },
+      { src: '/images/about/its_always_staples_center.jpg', alt: 'Stina posing on a balcony overlooking the arena in downtown LA' },
+      { src: '/images/about/meditation_at_the_beach.jpg', alt: 'Stina sitting cross-legged on the beach with her eyes closed' },
+      { src: '/images/about/more_meditation_at_the_beach.jpg', alt: 'Stina meditating on the beach, profile view facing the ocean' },
+      { src: '/images/about/tree_lover_1.jpg', alt: 'Stina standing beneath a tree with golden autumn leaves' },
+      { src: '/images/about/tree_lover_2.jpg', alt: 'Stina perched in the branches of a gnarled tree, looking up' },
     ],
   },
   process: {

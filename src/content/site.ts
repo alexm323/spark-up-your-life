@@ -212,7 +212,7 @@ export const site: SiteContent = {
               name: 'Chakra Alignment (In Person)',
               price: '$222',
               description:
-                'A hands-on session focused on identifying and clearing blockages across your energy centers. In-person only.',
+                "A hands-on session focused on identifying and clearing blockages across your energy centers. In-person only — for a virtual option, ask about the Chakra Candle under Custom Spellwork.",
               bookingUrl: 'https://cal.com/stina-sparkles/chakra-alignment',
               comingSoon: true,
             },
@@ -420,7 +420,7 @@ export const site: SiteContent = {
             { name: 'Tranquil Home' },
             { name: '3rd Eye Opening' },
             { name: 'Road Opener' },
-            { name: 'Chakra Candle' },
+            { name: 'Chakra Candle', description: 'Virtual chakra alignment' },
             { name: 'Focus' },
           ],
         },

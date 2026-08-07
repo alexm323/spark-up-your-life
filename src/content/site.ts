@@ -102,7 +102,7 @@ export const site: SiteContent = {
   },
   announcementBanner: {
     enabled: true,
-    message: 'New magic coming soon: Reiki & Chakra Alignment sessions',
+    message: 'New magic coming soon: in-person Reiki & Chakra Alignment sessions',
   },
   services: [
     {
@@ -198,17 +198,15 @@ export const site: SiteContent = {
       description: 'Energy work to help you feel less drained and more like yourself.',
       price: '$80',
       priceNote: '/ 60 min',
-      comingSoon: true,
       menuGroups: [
         {
           items: [
             {
-              name: 'Reiki Session',
+              name: 'Reiki Session (Virtual)',
               price: '$80',
               priceNote: '/ 60 min',
-              description: 'Energy work to help you feel less drained and more like yourself.',
+              description: 'Energy work over video call to help you feel less drained and more like yourself.',
               bookingUrl: 'https://cal.com/stina-sparkles/reiki-session',
-              comingSoon: true,
             },
             {
               name: 'Chakra Alignment (In Person)',
@@ -219,10 +217,10 @@ export const site: SiteContent = {
               comingSoon: true,
             },
             {
-              name: 'Reiki Cleansing',
+              name: 'Reiki Cleansing (Virtual)',
               price: '$88',
               description:
-                'A clearing-focused energy session, resetting your field rather than a full alignment.',
+                'A clearing-focused energy session over video call, resetting your field rather than a full alignment.',
               bookingUrl: 'https://cal.com/stina-sparkles/reiki-cleansing',
             },
             {
@@ -230,6 +228,7 @@ export const site: SiteContent = {
               price: '$45',
               description: 'A lighter, space-or-person cleansing session done face to face.',
               bookingUrl: 'https://cal.com/stina-sparkles/cleanse-in-person',
+              comingSoon: true,
             },
           ],
         },

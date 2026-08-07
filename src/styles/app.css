@@ -41,6 +41,24 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--spark);outline-offs
 }
 .glint{color:var(--spark)}
 
+/* ── Announcement banner ────────────────── */
+.announcement-banner{
+  position:relative;overflow:hidden;padding:14px 24px;text-align:center;
+  background:linear-gradient(120deg, var(--twilight), var(--velvet));
+  border-bottom:1px solid var(--hairline);
+}
+.announcement-message{position:relative;z-index:1;margin:0}
+.banner-stars{position:absolute;inset:0;pointer-events:none}
+.banner-stars i{
+  position:absolute;font-style:normal;color:var(--spark);font-size:11px;
+  animation:twinkle 3.4s ease-in-out infinite;
+}
+.banner-stars i:nth-child(2){animation-delay:.6s;color:var(--rose)}
+.banner-stars i:nth-child(3){animation-delay:1.1s}
+.banner-stars i:nth-child(4){animation-delay:1.8s;color:var(--rose)}
+.banner-stars i:nth-child(5){animation-delay:2.4s}
+.banner-stars i:nth-child(6){animation-delay:1.5s}
+
 /* ── Header ─────────────────────────────── */
 header{padding:26px 0;border-bottom:1px solid var(--hairline)}
 header .wrap{display:flex;align-items:baseline;justify-content:space-between;gap:16px;flex-wrap:wrap}
@@ -71,7 +89,7 @@ nav a:hover{color:var(--spark)}
 .stars i:nth-child(6){animation-delay:1.7s}
 @keyframes twinkle{0%,100%{opacity:.25;transform:scale(.85)}50%{opacity:1;transform:scale(1.1)}}
 @media (prefers-reduced-motion: reduce){
-  .stars i{animation:none;opacity:.6}
+  .stars i,.banner-stars i{animation:none;opacity:.6}
   html{scroll-behavior:auto}
 }
 .hero h1{font-size:clamp(46px,7.5vw,84px);margin:18px 0 22px}
@@ -87,6 +105,7 @@ nav a:hover{color:var(--spark)}
 .btn:hover{background:var(--spark);color:var(--twilight)}
 .btn.solid{background:var(--spark);color:var(--twilight)}
 .btn.solid:hover{background:transparent;color:var(--spark)}
+.btn:disabled,.btn.is-disabled{opacity:.45;cursor:not-allowed;pointer-events:none}
 
 .spark-divider{
   display:flex;justify-content:center;gap:22px;margin-top:64px;
@@ -106,6 +125,17 @@ section{padding:88px 0}
 }
 .card:hover{transform:translateY(-6px) rotate(-.5deg);box-shadow:0 18px 44px rgba(0,0,0,.5)}
 .card:hover .corner{opacity:1}
+.card.is-coming-soon{overflow:hidden}
+.card.is-coming-soon:hover{transform:none;box-shadow:none}
+.card.is-coming-soon .corner{display:none}
+.soon-ribbon{
+  position:absolute;top:26px;right:-42px;z-index:2;width:170px;padding:7px 0;
+  text-align:center;transform:rotate(45deg);transform-origin:center;
+  background:var(--spark);
+  background-image:repeating-linear-gradient(45deg, transparent 0 10px, rgba(33,21,57,.24) 10px 20px);
+  color:var(--twilight);font-weight:700;font-size:11px;letter-spacing:.16em;text-transform:uppercase;
+  box-shadow:0 2px 8px rgba(0,0,0,.4);
+}
 .corner{
   position:absolute;top:14px;right:16px;color:var(--rose);
   opacity:.45;transition:opacity .3s;font-size:15px;
@@ -115,6 +145,14 @@ section{padding:88px 0}
   display:flex;flex-direction:column;text-align:center;
 }
 .card .numeral{font-family:'Cormorant Garamond',serif;color:var(--spark);font-size:20px;letter-spacing:.3em}
+.badge-soon{
+  display:inline-block;font-size:10px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;
+  color:var(--spark);border:1px solid var(--hairline);border-radius:999px;padding:4px 10px;
+  font-family:'Karla',sans-serif;white-space:nowrap;
+}
+.badge-soon.small{
+  margin-left:8px;padding:2px 8px;font-size:9px;vertical-align:1px;
+}
 .card h3{font-size:30px;margin:14px 0 4px}
 .card .sub{font-size:13px;color:var(--rose);letter-spacing:.18em;text-transform:uppercase;margin-bottom:18px}
 .card p{color:var(--faded);font-size:15.5px;flex:1}

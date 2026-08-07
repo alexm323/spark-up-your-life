@@ -50,7 +50,8 @@ function ServiceCard({
   onToggle: () => void
 }) {
   return (
-    <article className="card">
+    <article className={`card${service.comingSoon ? ' is-coming-soon' : ''}`}>
+      {service.comingSoon && <span className="soon-ribbon">Coming Soon</span>}
       <span className="corner" aria-hidden="true">
         ✦
       </span>
@@ -69,8 +70,9 @@ function ServiceCard({
           aria-expanded={expanded}
           aria-controls={MENU_ID}
           onClick={onToggle}
+          disabled={service.comingSoon}
         >
-          {expanded ? 'Show less' : 'See more'}
+          {service.comingSoon ? 'Coming soon' : expanded ? 'Show less' : 'See more'}
         </button>
       </div>
     </article>
@@ -140,7 +142,10 @@ function VariantRow({ item }: { item: MenuItem }) {
   return (
     <li className="variant">
       <div className="variant-top">
-        <span className="variant-name">{item.name}</span>
+        <span className="variant-name">
+          {item.name}
+          {item.comingSoon && <span className="badge-soon small">Coming Soon</span>}
+        </span>
         {item.price && (
           <span className="variant-price">
             {item.price}
@@ -151,9 +156,15 @@ function VariantRow({ item }: { item: MenuItem }) {
       {item.description && <p className="variant-desc">{item.description}</p>}
       {item.bookingUrl && (
         <div className="variant-actions">
-          <a className="btn" href={item.bookingUrl}>
-            Book this
-          </a>
+          {item.comingSoon ? (
+            <span className="btn is-disabled" aria-disabled="true">
+              Coming soon
+            </span>
+          ) : (
+            <a className="btn" href={item.bookingUrl}>
+              Book this
+            </a>
+          )}
         </div>
       )}
     </li>

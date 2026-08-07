@@ -20,6 +20,7 @@ export interface MenuItem {
   priceNote?: string
   description?: string
   bookingUrl?: string
+  comingSoon?: boolean
 }
 
 export interface MenuGroup {
@@ -38,6 +39,7 @@ export interface Service {
   price: string
   priceNote?: string
   menuGroups: MenuGroup[]
+  comingSoon?: boolean
 }
 
 export interface GalleryImage {
@@ -67,8 +69,14 @@ export interface Process {
   steps: ProcessStep[]
 }
 
+export interface AnnouncementBanner {
+  enabled: boolean
+  message: string
+}
+
 export interface SiteContent {
   business: Business
+  announcementBanner: AnnouncementBanner
   services: Service[]
   previousSpells: PreviousSpells
   about: About
@@ -91,6 +99,10 @@ export const site: SiteContent = {
     zelle: 'alebensti@gmail.com',
     bookingUrl: 'https://cal.com/stina-sparkles',
     siteUrl: 'https://www.stinasparkles.com',
+  },
+  announcementBanner: {
+    enabled: true,
+    message: 'New magic coming soon: Reiki & Chakra Alignment sessions',
   },
   services: [
     {
@@ -186,6 +198,7 @@ export const site: SiteContent = {
       description: 'Energy work to help you feel less drained and more like yourself.',
       price: '$80',
       priceNote: '/ 60 min',
+      comingSoon: true,
       menuGroups: [
         {
           items: [
@@ -195,6 +208,7 @@ export const site: SiteContent = {
               priceNote: '/ 60 min',
               description: 'Energy work to help you feel less drained and more like yourself.',
               bookingUrl: 'https://cal.com/stina-sparkles/reiki-session',
+              comingSoon: true,
             },
             {
               name: 'Chakra Alignment (In Person)',
@@ -202,6 +216,7 @@ export const site: SiteContent = {
               description:
                 'A hands-on session focused on identifying and clearing blockages across your energy centers. In-person only.',
               bookingUrl: 'https://cal.com/stina-sparkles/chakra-alignment',
+              comingSoon: true,
             },
             {
               name: 'Reiki Cleansing',

@@ -389,6 +389,13 @@ export const site: SiteContent = {
               description: 'A fast, simplified version of any spell using a single candle working.',
               bookingUrl: 'https://cal.com/stina-sparkles/express-spellwork',
             },
+            {
+              name: 'Good Luck Spell',
+              price: '$33.33',
+              description:
+                'A spell to enhance your luck in the best way possible. Increase your chance of winning chance games and have more money making opportunities. This spell will make you feel like you are always in the right place at the right time.',
+              bookingUrl: 'https://cal.com/stina-sparkles/good-luck-spell',
+            },
           ],
         },
         {
